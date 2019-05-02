@@ -44,12 +44,12 @@ The controller code responsible for rendering the plotting functionality for a 3
 
 ## What’s not so good about this code:
 -	At first glance, this code is quite difficult to read. The line spacing is poor and there is very little in-code commenting. Python is great because its so readable.  (See PEP8)
--	From a front end and performance point of view, I think the use of the mako templating framework could be reviewed. There seems to be a large amount of logic being processed on the front-end. Ideally, you want to load and filter/manipulate all your results in your view/controller, and have JavaScript responsible for representing the data. 
+-	From a front end and performance point of view, I think the use of the mako templating framework could be reviewed. There seems to be a large amount of logic being processed on the front-end. Ideally, you want to load and filter/manipulate all your results in your view/controller and have JavaScript responsible for representing the data. 
 
-## How the code might be written differently if we want to take advantage of more modern javascript frameworks such as vuejs, so that we can make changes on the cllient side (html page) more easily.
+## How the code might be written differently if we want to take advantage of more modern JavaScript frameworks such as vue.js, so that we can make changes on the client side (html page) more easily.
 
 -	From previous Django projects I have worked on, I have used the Jinja2 templating language for rendering data on the front-end. Jijna2 can be integrated with the pyramid framework, as can Chameleon and Mako. Jinja has some great advantages in terms of being distinctly readable when passed to your HTML page. Mako allows you to write application logic inside your html code, but it can be difficult to read and impacts performance. 
--	If the goal is to increase performance and improve or future proof the client side of the application, my recommendation moving forward would be to explore using jinga or similar and render your code via JSON. Below is an example of how to pass json data to your front end Javascript. 
+-	If the goal is to increase performance and improve or future proof the client side of the application, my recommendation moving forward would be to explore using jinja or similar and render your code via JSON. Below is an example of how to pass json data to your front-end JavaScript. 
 
 
 ```
@@ -140,3 +140,4 @@ The data is manipulated within the function then passed to the 'data' variable i
     </script>
 
 ```
+
